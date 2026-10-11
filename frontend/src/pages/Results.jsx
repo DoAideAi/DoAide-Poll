@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { getResults, getExportUrl } from '../api'
 import ShareButtons from '../components/ShareButtons'
 
-const COLORS = ['#0D9488', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316', '#6366F1']
+const COLORS = ['#0D9488', '#3B82F6', '#10B981', '#14B8A6', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316', '#6366F1']
 
 export default function Results() {
   const { id } = useParams()
