@@ -17,7 +17,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Create Free Polls &<br />
-            <span className="italic text-gold">Surveys</span> in Seconds
+            <span className="text-da">Surveys</span> in Seconds
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
             No login required. Create a poll, share the link, get instant results.
@@ -26,7 +26,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/create"
-              className="bg-gold hover:bg-gold-dark text-gray-900 font-bold px-8 py-4 rounded-xl text-lg transition-colors no-underline shadow-lg shadow-gold/20"
+              className="bg-da hover:bg-da-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors no-underline shadow-lg shadow-da/20"
             >
               Create a Poll &rarr;
             </Link>
@@ -43,12 +43,12 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Everything you need, <span className="italic text-gold">nothing</span> you don't
+            Everything you need, <span className="text-da">nothing</span> you don't
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((f) => (
               <div key={f.title} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <f.icon className="text-gold text-3xl mb-4" />
+                <f.icon className="text-da text-3xl mb-4" />
                 <h3 className="font-bold text-gray-900 mb-2">{f.title}</h3>
                 <p className="text-gray-600 text-sm">{f.desc}</p>
               </div>
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-gold/10 py-16">
+      <section className="bg-da/10 py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Ready to get started?
@@ -67,7 +67,7 @@ export default function Home() {
           </p>
           <Link
             to="/create"
-            className="inline-block bg-gold hover:bg-gold-dark text-gray-900 font-bold px-8 py-4 rounded-xl text-lg transition-colors no-underline"
+            className="inline-block bg-da hover:bg-da-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors no-underline"
           >
             Create Your Poll Now
           </Link>

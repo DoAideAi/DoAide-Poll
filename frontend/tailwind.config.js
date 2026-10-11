@@ -7,14 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: '#F0B429',
-        'gold-dark': '#D4991A',
+        da: {
+          DEFAULT: '#0D9488',
+          dark: '#0B7C72',
+          light: '#F0FDFA',
+        },
         brand: {
-          50: '#FFFDF5',
-          100: '#FFF9E6',
-          500: '#F0B429',
-          600: '#D4991A',
-          700: '#B8800F',
+          50: '#F0FDFA',
+          100: '#CCFBF1',
+          500: '#0D9488',
+          600: '#0B7C72',
+          700: '#0F766E',
         },
       },
     },

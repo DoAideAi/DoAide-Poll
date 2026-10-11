@@ -58,7 +58,7 @@ export default function Vote() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="w-8 h-8 border-4 border-gold border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-4 border-da border-t-transparent rounded-full animate-spin" />
       </div>
     )
   }
@@ -98,14 +98,14 @@ export default function Vote() {
                 onClick={() => toggleOption(option.id)}
                 className={`w-full text-left px-5 py-3.5 rounded-xl border-2 transition-all ${
                   selected.includes(option.id)
-                    ? 'border-gold bg-brand-50 text-gray-900'
+                    ? 'border-da bg-brand-50 text-gray-900'
                     : 'border-gray-200 hover:border-gray-300 text-gray-700'
                 }`}
               >
                 <span className="flex items-center gap-3">
                   <span
                     className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
-                      selected.includes(option.id) ? 'border-gold bg-gold' : 'border-gray-300'
+                      selected.includes(option.id) ? 'border-da bg-da' : 'border-gray-300'
                     }`}
                   >
                     {selected.includes(option.id) && (
@@ -124,7 +124,7 @@ export default function Vote() {
                 value={otherText}
                 onChange={(e) => setOtherText(e.target.value)}
                 placeholder="Other (write in)"
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold focus:border-gold outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-da focus:border-da outline-none"
               />
             </div>
           )}
@@ -136,7 +136,7 @@ export default function Vote() {
           <button
             onClick={handleVote}
             disabled={submitting}
-            className="w-full bg-gold hover:bg-gold-dark disabled:opacity-50 text-gray-900 font-bold py-3.5 rounded-xl text-lg transition-colors mt-4"
+            className="w-full bg-da hover:bg-da-dark disabled:opacity-50 text-white font-bold py-3.5 rounded-xl text-lg transition-colors mt-4"
           >
             {submitting ? 'Submitting...' : 'Vote'}
           </button>

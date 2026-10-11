@@ -43,7 +43,7 @@ export default function Embed() {
           <button
             onClick={() => setSize('full')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              size === 'full' ? 'bg-gold text-gray-900' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              size === 'full' ? 'bg-da text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             Full Size
@@ -51,7 +51,7 @@ export default function Embed() {
           <button
             onClick={() => setSize('compact')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              size === 'compact' ? 'bg-gold text-gray-900' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              size === 'compact' ? 'bg-da text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             Compact
@@ -79,7 +79,7 @@ export default function Embed() {
       <div className="mt-8 flex gap-3 justify-center">
         <Link
           to={`/poll/${id}`}
-          className="bg-gold hover:bg-gold-dark text-gray-900 font-semibold px-5 py-2.5 rounded-lg transition-colors no-underline text-sm"
+          className="bg-da hover:bg-da-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors no-underline text-sm"
         >
           View Poll
         </Link>

@@ -26,12 +26,12 @@ function SurveyQuestion({ question, index, onChange, onRemove, total }) {
               value={question.text}
               onChange={(e) => update('text', e.target.value)}
               placeholder={`Question ${index + 1}`}
-              className="flex-1 min-w-[200px] px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none"
+              className="flex-1 min-w-[200px] px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-da focus:border-da outline-none"
             />
             <select
               value={question.type}
               onChange={(e) => update('type', e.target.value)}
-              className="px-3 py-2.5 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-gold focus:border-gold outline-none"
+              className="px-3 py-2.5 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-da focus:border-da outline-none"
             >
               {QUESTION_TYPES.map((t) => (
                 <option key={t.value} value={t.value}>{t.label}</option>
@@ -53,7 +53,7 @@ function SurveyQuestion({ question, index, onChange, onRemove, total }) {
                       update('options', opts)
                     }}
                     placeholder={`Option ${oi + 1}`}
-                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none text-sm"
+                    className="flex-1 px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-da focus:border-da outline-none text-sm"
                   />
                   {question.options.length > 2 && (
                     <button
@@ -71,7 +71,7 @@ function SurveyQuestion({ question, index, onChange, onRemove, total }) {
               {question.options.length < 10 && (
                 <button
                   onClick={() => update('options', [...question.options, ''])}
-                  className="text-gold hover:text-gold-dark text-sm font-medium flex items-center gap-1 ml-6"
+                  className="text-da hover:text-da-dark text-sm font-medium flex items-center gap-1 ml-6"
                 >
                   <FaPlus className="text-xs" /> Add option
                 </button>
@@ -84,7 +84,7 @@ function SurveyQuestion({ question, index, onChange, onRemove, total }) {
               type="checkbox"
               checked={question.required}
               onChange={(e) => update('required', e.target.checked)}
-              className="accent-gold"
+              className="accent-da"
             />
             Required
           </label>
@@ -221,7 +221,7 @@ export default function Create() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder={isSurvey ? 'Employee Satisfaction Survey' : 'What should we have for lunch?'}
-            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold focus:border-gold outline-none text-lg"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-da focus:border-da outline-none text-lg"
           />
         </div>
 
@@ -233,7 +233,7 @@ export default function Create() {
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Tell respondents what this survey is about..."
               rows={2}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gold focus:border-gold outline-none resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-da focus:border-da outline-none resize-none"
             />
           </div>
         )}
@@ -255,7 +255,7 @@ export default function Create() {
                         setOptions(newOpts)
                       }}
                       placeholder={`Option ${i + 1}`}
-                      className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold outline-none"
+                      className="flex-1 px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-da focus:border-da outline-none"
                     />
                     {options.length > 2 && (
                       <button type="button" onClick={() => removeOption(i)} className="text-gray-400 hover:text-red-500 p-2">
@@ -269,7 +269,7 @@ export default function Create() {
                 <button
                   type="button"
                   onClick={addOption}
-                  className="mt-3 text-gold hover:text-gold-dark font-medium text-sm flex items-center gap-1.5 ml-8"
+                  className="mt-3 text-da hover:text-da-dark font-medium text-sm flex items-center gap-1.5 ml-8"
                 >
                   <FaPlus className="text-xs" /> Add option
                 </button>
@@ -284,7 +284,7 @@ export default function Create() {
                   value="single"
                   checked={choiceType === 'single'}
                   onChange={(e) => setChoiceType(e.target.value)}
-                  className="accent-gold"
+                  className="accent-da"
                 />
                 Single choice
               </label>
@@ -295,7 +295,7 @@ export default function Create() {
                   value="multiple"
                   checked={choiceType === 'multiple'}
                   onChange={(e) => setChoiceType(e.target.value)}
-                  className="accent-gold"
+                  className="accent-da"
                 />
                 Multiple choice
               </label>
@@ -304,7 +304,7 @@ export default function Create() {
                   type="checkbox"
                   checked={allowOther}
                   onChange={(e) => setAllowOther(e.target.checked)}
-                  className="accent-gold"
+                  className="accent-da"
                 />
                 Allow "Other" write-in
               </label>
@@ -330,7 +330,7 @@ export default function Create() {
             <button
               type="button"
               onClick={addQuestion}
-              className="mt-4 text-gold hover:text-gold-dark font-medium text-sm flex items-center gap-1.5"
+              className="mt-4 text-da hover:text-da-dark font-medium text-sm flex items-center gap-1.5"
             >
               <FaPlus className="text-xs" /> Add question
             </button>
@@ -345,7 +345,7 @@ export default function Create() {
               <select
                 value={dupPrevention}
                 onChange={(e) => setDupPrevention(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none"
+                className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:ring-2 focus:ring-da focus:border-da outline-none"
               >
                 <option value="none">None (allow multiple votes)</option>
                 <option value="ip">IP-based (one vote per device)</option>
@@ -357,7 +357,7 @@ export default function Create() {
                 type="datetime-local"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-gold focus:border-gold outline-none"
+                className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-da focus:border-da outline-none"
               />
             </div>
           </div>
@@ -372,7 +372,7 @@ export default function Create() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gold hover:bg-gold-dark disabled:opacity-50 text-gray-900 font-bold py-4 rounded-xl text-lg transition-colors shadow-lg shadow-gold/20"
+          className="w-full bg-da hover:bg-da-dark disabled:opacity-50 text-white font-bold py-4 rounded-xl text-lg transition-colors shadow-lg shadow-da/20"
         >
           {loading ? 'Creating...' : isSurvey ? 'Create Survey' : 'Create Poll'}
         </button>

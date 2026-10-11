@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { getResults, getExportUrl } from '../api'
 import ShareButtons from '../components/ShareButtons'
 
-const COLORS = ['#F0B429', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316', '#6366F1']
+const COLORS = ['#0D9488', '#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316', '#6366F1']
 
 export default function Results() {
   const { id } = useParams()
@@ -22,7 +22,7 @@ export default function Results() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="w-8 h-8 border-4 border-gold border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-4 border-da border-t-transparent rounded-full animate-spin" />
       </div>
     )
   }
@@ -56,7 +56,7 @@ export default function Results() {
             <button
               onClick={() => setView('bar')}
               className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                view === 'bar' ? 'bg-gold text-gray-900' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                view === 'bar' ? 'bg-da text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
               Bar Chart
@@ -64,7 +64,7 @@ export default function Results() {
             <button
               onClick={() => setView('pie')}
               className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                view === 'pie' ? 'bg-gold text-gray-900' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                view === 'pie' ? 'bg-da text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
               Pie Chart
@@ -172,7 +172,7 @@ export default function Results() {
         <div className="flex flex-wrap gap-3 justify-center">
           <Link
             to={`/poll/${id}`}
-            className="bg-gold hover:bg-gold-dark text-gray-900 font-semibold px-5 py-2.5 rounded-lg transition-colors no-underline text-sm"
+            className="bg-da hover:bg-da-dark text-white font-semibold px-5 py-2.5 rounded-lg transition-colors no-underline text-sm"
           >
             Vote on this poll
           </Link>
@@ -194,7 +194,7 @@ export default function Results() {
       </div>
 
       <div className="mt-8 text-center">
-        <Link to="/create" className="text-gold hover:text-gold-dark font-semibold text-sm no-underline">
+        <Link to="/create" className="text-da hover:text-da-dark font-semibold text-sm no-underline">
           Create your own poll at poll.doaide.com &rarr;
         </Link>
       </div>
