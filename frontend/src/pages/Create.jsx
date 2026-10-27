@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { FaPlus, FaTrash, FaGripVertical } from 'react-icons/fa'
 import { createPoll } from '../api'
+import useSEO from '../hooks/useSEO'
+import { routeMeta } from '../routeMeta'
 
 const QUESTION_TYPES = [
   { value: 'choice', label: 'Multiple Choice' },
@@ -103,6 +105,8 @@ export default function Create() {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const isSurvey = searchParams.get('type') === 'survey'
+
+  useSEO(routeMeta['/create']);
 
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { getPoll, submitVote } from '../api'
 import ShareButtons from '../components/ShareButtons'
+import useSEO from '../hooks/useSEO'
+import { buildPollMeta } from '../routeMeta'
 
 export default function Vote() {
   const { id } = useParams()
@@ -15,6 +17,9 @@ export default function Vote() {
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
+
+  const seoMeta = poll ? buildPollMeta(poll, 'vote') : null;
+  useSEO(seoMeta || { title: 'Loading Poll... | DoAide Poll', description: '' });
 
   useEffect(() => {
     getPoll(id)

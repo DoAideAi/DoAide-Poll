@@ -2,12 +2,17 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { FaCheck, FaCopy } from 'react-icons/fa'
 import { getPoll } from '../api'
+import useSEO from '../hooks/useSEO'
+import { buildPollMeta } from '../routeMeta'
 
 export default function Embed() {
   const { id } = useParams()
   const [poll, setPoll] = useState(null)
   const [size, setSize] = useState('full')
   const [copied, setCopied] = useState(false)
+
+  const seoMeta = poll ? buildPollMeta(poll, 'embed') : null;
+  useSEO(seoMeta || { title: 'Embed Poll | DoAide Poll', description: '' });
 
   useEffect(() => {
     getPoll(id).then(setPoll).catch(() => {})

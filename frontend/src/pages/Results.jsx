@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 import { getResults, getExportUrl } from '../api'
 import ShareButtons from '../components/ShareButtons'
+import useSEO from '../hooks/useSEO'
+import { buildPollMeta } from '../routeMeta'
 
 const COLORS = ['#0D9488', '#3B82F6', '#10B981', '#14B8A6', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16', '#F97316', '#6366F1']
 
@@ -11,6 +13,9 @@ export default function Results() {
   const [results, setResults] = useState(null)
   const [loading, setLoading] = useState(true)
   const [view, setView] = useState('bar')
+
+  const seoMeta = results ? buildPollMeta({ id, title: results.title, total_votes: results.total_votes }, 'results') : null;
+  useSEO(seoMeta || { title: 'Loading Results... | DoAide Poll', description: '' });
 
   useEffect(() => {
     getResults(id)

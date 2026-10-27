@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaBolt, FaClipboardList, FaChartBar, FaCode, FaShareAlt, FaGlobe } from 'react-icons/fa'
+import useSEO from '../hooks/useSEO'
+import { routeMeta } from '../routeMeta'
 
 const features = [
   { icon: FaBolt, title: 'Quick Polls', desc: 'Create a poll in under 15 seconds. Question, options, share.' },
@@ -11,6 +13,8 @@ const features = [
 ]
 
 export default function Home() {
+  useSEO(routeMeta['/']);
+
   return (
     <>
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 md:py-28">
