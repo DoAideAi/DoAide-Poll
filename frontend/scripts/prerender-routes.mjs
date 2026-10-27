@@ -138,4 +138,21 @@ for (const [route, meta] of Object.entries(routes)) {
   console.log(`  ✓ ${route} → ${outFile}`);
 }
 
+// Route each prerendered URL to its own index.html, with the SPA fallback
+// last. `serve -s` would put its own catch-all first and shadow these, so the
+// web unit runs plain `serve dist`. serve-handler re-applies the remaining
+// rewrites to a rewritten path, so the fallback only matches dot-free paths.
+const serveConfig = {
+  rewrites: [
+    ...Object.keys(routes)
+      .filter((path) => path !== '/')
+      .map((path) => ({ source: path, destination: `${path}/index.html` })),
+    { source: '/:path([^.]+)', destination: '/index.html' },
+  ],
+  headers: [
+    { source: '/assets/**', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+  ],
+};
+writeFileSync(resolve(DIST, 'serve.json'), JSON.stringify(serveConfig, null, 2) + '\n');
+
 console.log('\nDone! Static routes prerendered.');
